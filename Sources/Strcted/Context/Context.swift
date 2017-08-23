@@ -8,12 +8,13 @@
 
 import Foundation
 
-public class Context {
-    var controllerClasses: [IController.Type]
-    
-    static func create() {
-        Strcted.context = Context()
+extension Strcted {
+    public class Context {
+        var controllerClasses: [IController.Type]
+        
+        init() {
+            controllerClasses = []
+        }
     }
     
-    private init() {}
 }

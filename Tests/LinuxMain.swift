@@ -6,5 +6,9 @@
 //
 //
 
-import Foundation
-@testable import Strcted
+import XCTest
+
+XCTMain([
+    testCase(StrctedTests.allTests)
+])
+

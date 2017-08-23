@@ -10,5 +10,7 @@ class Fixtures {
 }
 
 class TestController: Controller {
-
+    func testMethod() {
+        
+    }
 }

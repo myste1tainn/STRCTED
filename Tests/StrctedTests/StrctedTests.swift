@@ -7,23 +7,21 @@
 //
 
 import XCTest
+@testable import Strcted
 
 class StrctedTests: XCTestCase {
     
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    static var allTests: [(String, (StrctedTests) -> () throws -> Void)] {
+        return [
+            ("testCollect_controllerClassesAreCollected", testCollect_controllerClassesAreCollected)
+        ]
+    }
+    
+    func testCollect_controllerClassesAreCollected() {
+        let strcted = Strcted()
+        let fixtures = Fixtures()
+        strcted.collect(controllerClasses: fixtures.controllerClasses)
         
-    }
-    
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
-    
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        XCTAssert(false, "it fails!!!")
+        XCTAssert(strcted.context.controllerClasses.count > 0, "There should be at least 1 controller class collected")
     }
 }

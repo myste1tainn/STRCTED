@@ -7,19 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		25499128A8A1EC29972C992D /* IController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254994E7AB1093AAECD68646 /* IController.swift */; };
-		254992820BB59625BAD199C2 /* Strcted.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25499F86C0E34F2562C0A10F /* Strcted.swift */; };
 		254994AD42E0595EA330F266 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 25499FDE3A4964F32608FA63 /* Info.plist */; };
-		2549982B4AF77465C8F0DB4A /* ControllerCollector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25499F0B2818FBCA13EA6630 /* ControllerCollector.swift */; };
-		25499C3EC7B8322EAFB4E241 /* Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254996469F42EA93027DC064 /* Context.swift */; };
-		25499CADD0496064A2035764 /* ContextWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254992DB8721B32B4FD79355 /* ContextWorker.swift */; };
-		25499DB600983D36C76F071D /* ControllerDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25499C73CE0362582D915AF3 /* ControllerDecorator.swift */; };
-		25499E8A6CC86E3BBB85640E /* Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25499BBFD46A927452A2307F /* Controller.swift */; };
-		25499EFED1C06897352B12B1 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25499E5AD8DC8DAA2064E7FB /* main.swift */; };
-		25499F545C111B061B0683B5 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25499405E3AEAB17D7F903C7 /* UserController.swift */; };
-		E17AB9B51F3EF95800845629 /* StrctedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17AB9B31F3EF95800845629 /* StrctedTests.swift */; };
+		25499CA81C88841DB634A076 /* Fixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2549960D6641506BEF632D5D /* Fixture.swift */; };
+		25499D5D175E5071B826AB6D /* StrctedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17AB9B31F3EF95800845629 /* StrctedTests.swift */; };
+		E1421B201F4D49D0007935E1 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1421B011F4D489F007935E1 /* main.swift */; };
+		E1421B211F4D49D0007935E1 /* ControllerCollector.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1421B041F4D489F007935E1 /* ControllerCollector.swift */; };
+		E1421B221F4D49D0007935E1 /* Strcted.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1421B051F4D489F007935E1 /* Strcted.swift */; };
+		E1421B231F4D49D0007935E1 /* Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1421B071F4D489F007935E1 /* Context.swift */; };
+		E1421B251F4D49D0007935E1 /* Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1421B0A1F4D489F007935E1 /* Controller.swift */; };
+		E1421B261F4D49D0007935E1 /* ControllerDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1421B0B1F4D489F007935E1 /* ControllerDecorator.swift */; };
+		E1421B271F4D49D0007935E1 /* IController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1421B0C1F4D489F007935E1 /* IController.swift */; };
+		E1421B281F4D49D0007935E1 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1421B0D1F4D489F007935E1 /* UserController.swift */; };
 		E17AB9B71F3EF96200845629 /* LinuxMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17AB9B61F3EF96200845629 /* LinuxMain.swift */; };
-		E18EA4281F3E0F1800575567 /* webroot in CopyFiles */ = {isa = PBXBuildFile; fileRef = E18EA4261F3E0EB700575567 /* webroot */; };
 		OBJ_1000 /* d2i_pu.c in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_258 /* d2i_pu.c */; };
 		OBJ_1001 /* des_enc.c in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_259 /* des_enc.c */; };
 		OBJ_1002 /* des_old.c in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_260 /* des_old.c */; };
@@ -1111,27 +1110,25 @@
 			dstPath = "";
 			dstSubfolderSpec = 16;
 			files = (
-				E18EA4281F3E0F1800575567 /* webroot in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		254992DB8721B32B4FD79355 /* ContextWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContextWorker.swift; sourceTree = "<group>"; };
-		25499405E3AEAB17D7F903C7 /* UserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
-		254994E7AB1093AAECD68646 /* IController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IController.swift; sourceTree = "<group>"; };
-		254996469F42EA93027DC064 /* Context.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Context.swift; sourceTree = "<group>"; };
-		25499BBFD46A927452A2307F /* Controller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Controller.swift; sourceTree = "<group>"; };
-		25499C73CE0362582D915AF3 /* ControllerDecorator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControllerDecorator.swift; sourceTree = "<group>"; };
-		25499E5AD8DC8DAA2064E7FB /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		25499F0B2818FBCA13EA6630 /* ControllerCollector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControllerCollector.swift; sourceTree = "<group>"; };
-		25499F86C0E34F2562C0A10F /* Strcted.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strcted.swift; sourceTree = "<group>"; };
+		2549960D6641506BEF632D5D /* Fixture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fixture.swift; sourceTree = "<group>"; };
 		25499FDE3A4964F32608FA63 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
+		E1421B011F4D489F007935E1 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		E1421B041F4D489F007935E1 /* ControllerCollector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControllerCollector.swift; sourceTree = "<group>"; };
+		E1421B051F4D489F007935E1 /* Strcted.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strcted.swift; sourceTree = "<group>"; };
+		E1421B071F4D489F007935E1 /* Context.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Context.swift; sourceTree = "<group>"; };
+		E1421B0A1F4D489F007935E1 /* Controller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Controller.swift; sourceTree = "<group>"; };
+		E1421B0B1F4D489F007935E1 /* ControllerDecorator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControllerDecorator.swift; sourceTree = "<group>"; };
+		E1421B0C1F4D489F007935E1 /* IController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IController.swift; sourceTree = "<group>"; };
+		E1421B0D1F4D489F007935E1 /* UserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 		E17AB9A91F3EF05300845629 /* StrctedTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StrctedTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E17AB9B31F3EF95800845629 /* StrctedTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StrctedTests.swift; sourceTree = "<group>"; };
 		E17AB9B61F3EF96200845629 /* LinuxMain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinuxMain.swift; sourceTree = "<group>"; };
-		E18EA4261F3E0EB700575567 /* webroot */ = {isa = PBXFileReference; lastKnownFileType = folder; name = webroot; path = Strcted/webroot; sourceTree = "<group>"; };
 		OBJ_100 /* a_print.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = a_print.c; sourceTree = "<group>"; };
 		OBJ_101 /* a_set.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = a_set.c; sourceTree = "<group>"; };
 		OBJ_102 /* a_sign.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = a_sign.c; sourceTree = "<group>"; };
@@ -2026,51 +2023,59 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		254997CBC8A8386E05BC610E /* Controller */ = {
+		E1421AFF1F4D489F007935E1 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				25499C73CE0362582D915AF3 /* ControllerDecorator.swift */,
-				254994E7AB1093AAECD68646 /* IController.swift */,
-				25499BBFD46A927452A2307F /* Controller.swift */,
+				E1421B001F4D489F007935E1 /* App */,
+				E1421B021F4D489F007935E1 /* Strcted */,
 			);
-			path = Controller;
+			path = Sources;
 			sourceTree = "<group>";
 		};
-		254998ED9DC3DDEF58FD0645 /* Context */ = {
+		E1421B001F4D489F007935E1 /* App */ = {
 			isa = PBXGroup;
 			children = (
-				254996469F42EA93027DC064 /* Context.swift */,
-				254992DB8721B32B4FD79355 /* ContextWorker.swift */,
+				E1421B011F4D489F007935E1 /* main.swift */,
 			);
-			path = Context;
+			path = App;
 			sourceTree = "<group>";
 		};
-		25499A1D690855F343E90B1C /* Strcted */ = {
+		E1421B021F4D489F007935E1 /* Strcted */ = {
 			isa = PBXGroup;
 			children = (
-				254998ED9DC3DDEF58FD0645 /* Context */,
-				254997CBC8A8386E05BC610E /* Controller */,
-				25499B0A0D4840CEA28A8BB2 /* Bootstrap */,
-				25499405E3AEAB17D7F903C7 /* UserController.swift */,
+				E1421B031F4D489F007935E1 /* Bootstrap */,
+				E1421B061F4D489F007935E1 /* Context */,
+				E1421B091F4D489F007935E1 /* Controller */,
+				E1421B0D1F4D489F007935E1 /* UserController.swift */,
 			);
 			path = Strcted;
 			sourceTree = "<group>";
 		};
-		25499B0A0D4840CEA28A8BB2 /* Bootstrap */ = {
+		E1421B031F4D489F007935E1 /* Bootstrap */ = {
 			isa = PBXGroup;
 			children = (
-				25499F86C0E34F2562C0A10F /* Strcted.swift */,
-				25499F0B2818FBCA13EA6630 /* ControllerCollector.swift */,
+				E1421B041F4D489F007935E1 /* ControllerCollector.swift */,
+				E1421B051F4D489F007935E1 /* Strcted.swift */,
 			);
 			path = Bootstrap;
 			sourceTree = "<group>";
 		};
-		25499F29DDFE5FF7C68C743F /* App */ = {
+		E1421B061F4D489F007935E1 /* Context */ = {
 			isa = PBXGroup;
 			children = (
-				25499E5AD8DC8DAA2064E7FB /* main.swift */,
+				E1421B071F4D489F007935E1 /* Context.swift */,
 			);
-			path = App;
+			path = Context;
+			sourceTree = "<group>";
+		};
+		E1421B091F4D489F007935E1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E1421B0A1F4D489F007935E1 /* Controller.swift */,
+				E1421B0B1F4D489F007935E1 /* ControllerDecorator.swift */,
+				E1421B0C1F4D489F007935E1 /* IController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		E17AB9AA1F3EF05300845629 /* Tests */ = {
@@ -2087,6 +2092,7 @@
 			isa = PBXGroup;
 			children = (
 				E17AB9B31F3EF95800845629 /* StrctedTests.swift */,
+				2549960D6641506BEF632D5D /* Fixture.swift */,
 			);
 			path = StrctedTests;
 			sourceTree = "<group>";
@@ -2196,8 +2202,7 @@
 			isa = PBXGroup;
 			children = (
 				OBJ_6 /* Package.swift */,
-				E18EA4261F3E0EB700575567 /* webroot */,
-				OBJ_7 /* Strcted */,
+				E1421AFF1F4D489F007935E1 /* Sources */,
 				E17AB9AA1F3EF05300845629 /* Tests */,
 				OBJ_10 /* Dependencies */,
 				OBJ_787 /* Products */,
@@ -2253,15 +2258,6 @@
 			);
 			name = "PerfectNet 2.1.18";
 			path = ".build/checkouts/Perfect-Net.git-3268755499654502659/Sources";
-			sourceTree = SOURCE_ROOT;
-		};
-		OBJ_7 /* Strcted */ = {
-			isa = PBXGroup;
-			children = (
-				25499F29DDFE5FF7C68C743F /* App */,
-				25499A1D690855F343E90B1C /* Strcted */,
-			);
-			path = Strcted;
 			sourceTree = SOURCE_ROOT;
 		};
 		OBJ_768 /* include */ = {
@@ -3356,7 +3352,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E17AB9B51F3EF95800845629 /* StrctedTests.swift in Sources */,
 				E17AB9B71F3EF96200845629 /* LinuxMain.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -3464,15 +3459,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				25499EFED1C06897352B12B1 /* main.swift in Sources */,
-				25499C3EC7B8322EAFB4E241 /* Context.swift in Sources */,
-				25499CADD0496064A2035764 /* ContextWorker.swift in Sources */,
-				25499DB600983D36C76F071D /* ControllerDecorator.swift in Sources */,
-				25499128A8A1EC29972C992D /* IController.swift in Sources */,
-				25499E8A6CC86E3BBB85640E /* Controller.swift in Sources */,
-				254992820BB59625BAD199C2 /* Strcted.swift in Sources */,
-				2549982B4AF77465C8F0DB4A /* ControllerCollector.swift in Sources */,
-				25499F545C111B061B0683B5 /* UserController.swift in Sources */,
+				E1421B281F4D49D0007935E1 /* UserController.swift in Sources */,
+				E1421B201F4D49D0007935E1 /* main.swift in Sources */,
+				E1421B271F4D49D0007935E1 /* IController.swift in Sources */,
+				E1421B231F4D49D0007935E1 /* Context.swift in Sources */,
+				E1421B221F4D49D0007935E1 /* Strcted.swift in Sources */,
+				E1421B251F4D49D0007935E1 /* Controller.swift in Sources */,
+				E1421B261F4D49D0007935E1 /* ControllerDecorator.swift in Sources */,
+				E1421B211F4D49D0007935E1 /* ControllerCollector.swift in Sources */,
+				25499D5D175E5071B826AB6D /* StrctedTests.swift in Sources */,
+				25499CA81C88841DB634A076 /* Fixture.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4440,7 +4436,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = StrctedTests/Info.plist;
+				INFOPLIST_FILE = Tests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
@@ -4486,7 +4482,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = StrctedTests/Info.plist;
+				INFOPLIST_FILE = Tests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;

@@ -1,9 +1,9 @@
 //
-//  Package.swift
-//  Strcted
+//  main.swift
+//  PerfectTemplate
 //
-//  Created by Kyle Jessup on 4/20/16.
-//	Copyright (C) 2016 PerfectlySoft, Inc.
+//  Created by Kyle Jessup on 2015-11-05.
+//	Copyright (C) 2015 PerfectlySoft, Inc.
 //
 //===----------------------------------------------------------------------===//
 //
@@ -16,16 +16,5 @@
 //
 //===----------------------------------------------------------------------===//
 //
-
-import PackageDescription
-
-let _ = Package(
-	name: "Strcted",
-	targets: [
-        Target(name: "Strcted"),
-        Target(name: "App", dependencies: ["Strcted"])
-    ],
-	dependencies: [
-		.Package(url: "https://github.com/PerfectlySoft/Perfect-HTTPServer.git", majorVersion: 2),
-    ]
-)
+import Foundation
+import Strcted

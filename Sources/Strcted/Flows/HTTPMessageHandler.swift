@@ -5,7 +5,7 @@
 import Foundation
 import PerfectHTTP
 
-public protocol IController: NSObjectProtocol {
+public protocol HTTPMessageHandlerObject: NSObjectProtocol {
     var request: HTTPRequest { get set }
     var response: HTTPResponse { get set }
     init(request: HTTPRequest, response: HTTPResponse)

@@ -10,7 +10,7 @@ import Foundation
 
 extension Strcted {
     public class Context {
-        var controllerClasses: [IController.Type]
+        var controllerClasses: [HTTPMessageHandlerObject.Type]
         
         init() {
             controllerClasses = []

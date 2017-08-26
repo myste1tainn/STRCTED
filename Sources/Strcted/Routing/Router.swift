@@ -4,46 +4,94 @@
 
 import Foundation
 import PerfectHTTP
-public extension Strcted {
-    public class Router {
-        var executionFlows: [RouteExecutionFlow<Controller>]
-        
-        init() {
-            executionFlows = []
-        }
-        
-        /// This is a root handler that takes all the requests and end all the responses
-        func rootHandler(request: HTTPRequest, response: HTTPResponse) {
-            response.setHeader(.contentType, value: "text/html")
-            response.appendBody(string: "<html><title>Hello, world!</title><body>Hello, world!</body></html>")
-            response.completed()
-        }
-        
-        func map<T: Controller>(route: String, with handler: @escaping (T) -> () throws -> Void) {
-            executionFlows.append(RouteExecutionFlow(
-                requestMiddlewares: [],
-                controllerClass: T.self,
-                controllerMethod: handler,
-                responseMiddlewares: []
-            ))
+import PerfectHTTPServer
+
+public class Router {
+    var routeDefinitions: [RouteableRouteDefinition]
+    var instantiatedControllerClasses: [Controller]
+    
+    /// Transform route definitions into route dictionary usable in PerfectLib
+    var routeDictionaries: [[String: Any]] {
+        return routeDefinitions.map {
+            switch $0.type {
+            case let .controllerRoute(definition):
+                let pre = self.executionBlocks(from: definition.middlewareDefinition.pre)
+                let main = self.executionBlocks(from: definition.controllerMetadata)
+                let post = self.executionBlocks(from: definition.middlewareDefinition.post)
+                let handler: HTTPMessageHandler = { request, response in
+                    var flow = MessageFlow(currentIndex: 0, executableFlows: pre + main + post)
+                    flow.next(request: request, response: response)
+                }
+                return [
+                    "method": "get",
+                    "uri": $0.uri ?? "",
+                    "handler": handler
+                ]
+            case .staticRoute:
+                return [
+                    "method": "get",
+                    "uri": $0.uri ?? "",
+                    "handler": PerfectHTTPServer.HTTPHandler.staticFiles,
+                    "documentRoot": "./webroot",
+                    "allowResponseFilters": true
+                ]
+            }
         }
     }
     
-    class RouteExecutionFlow<T> where T: Controller {
-        var requestMiddlewares: [Any]
-        var controllerClass: T.Type
-        var controllerMethod: (T) -> () throws -> Void
-        var responseMiddlewares: [Any]
-        
+    init() {
+        routeDefinitions = []
+        instantiatedControllerClasses = []
+    }
     
-        init(requestMiddlewares: Array<Any>,
-             controllerClass: T.Type,
-             controllerMethod: @escaping (T) -> () throws -> Void,
-             responseMiddlewares: Array<Any>) {
-            self.requestMiddlewares = requestMiddlewares
-            self.controllerClass = controllerClass
-            self.controllerMethod = controllerMethod
-            self.responseMiddlewares = responseMiddlewares
+    func executionBlocks(from controllers: [ControllerExecutableMetadata]) -> [HTTPMessageHandler] {
+        return controllers.map { controller in
+            { request, response in
+                let selector = Selector(controller.method)
+                controller.class
+                    .init(request: request, response: response)
+                    .perform(selector)
+            }
         }
+    }
+    
+    func executionBlocks(from middlewareTypes: [Middleware.Type]) -> [HTTPMessageHandler] {
+        return middlewareTypes.map { type in
+            { request, response in
+                type.init(request: request, response: response).execute()
+            }
+        }
+    }
+    
+    public func controller<T>(with class: T.Type) -> T? where T: Controller {
+        let match = instantiatedControllerClasses.filter { type(of: $0) == `class` }.first
+        return match as? T
+    }
+    
+    /// Execute the specify controller by the specify method name.
+    /// This will try to use controller without re-instantiating from cache
+    /// Specifying cache flag to true will cache controller to memory on instantiation
+    /// Otherwise the controller will be discarded after method execution
+    public func execute(controllerClass: Controller.Type,
+                        methodName: String,
+                        request: HTTPRequest,
+                        response: HTTPResponse,
+                        cache: Bool) {
+        let selector = Selector(methodName)
+        let controller = instantiatedControllerClasses
+            .filter { type(of: $0) == controllerClass }.first
+            ?? createController(class: controllerClass, request: request, response: response, cache: cache)
+        controller.perform(selector)
+    }
+    
+    public func createController(class: Controller.Type,
+                                 request: HTTPRequest,
+                                 response: HTTPResponse,
+                                 cache: Bool) -> Controller {
+        let controller = `class`.init(request: request, response: response)
+        if cache {
+            instantiatedControllerClasses.append(controller)
+        }
+        return controller
     }
 }

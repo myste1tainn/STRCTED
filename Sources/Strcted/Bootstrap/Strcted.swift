@@ -12,17 +12,16 @@ import PerfectHTTP
 import PerfectHTTPServer
 
 public class Strcted {
-    public static var current: Strcted!
+    public static var current: Strcted = Strcted()
     public let context: Context
     public let router: Router
-    public func collect(controllerClasses: [IController.Type]) {
+    public func collect(controllerClasses: [HTTPMessageHandlerObject.Type]) {
         context.controllerClasses = controllerClasses
     }
     
     init() {
         context = Context()
         router = Router()
-        Strcted.current = self
     }
     
     public func boot() {
@@ -31,12 +30,7 @@ public class Strcted {
                 [
                     "name": "localhost",
                     "port": 8181,
-                    "routes":[
-                        ["method": "get", "uri": "/", "handler": router.rootHandler],
-                        ["method": "get", "uri": "/**", "handler": PerfectHTTPServer.HTTPHandler.staticFiles,
-                         "documentRoot": "./webroot",
-                         "allowResponseFilters":true]
-                    ],
+                    "routes": router.routeDictionaries,
                     "filters":[
                         [
                             "type": "response",

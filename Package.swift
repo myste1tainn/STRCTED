@@ -23,7 +23,7 @@ let _ = Package(
 	name: "Strcted",
 	targets: [
         Target(name: "Strcted"),
-        Target(name: "App", dependencies: ["Strcted"])
+		Target(name: "Example", dependencies: ["Strcted"])
     ],
 	dependencies: [
 		.Package(url: "https://github.com/PerfectlySoft/Perfect-HTTPServer.git", majorVersion: 2),

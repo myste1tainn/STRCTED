@@ -12,15 +12,16 @@ import PerfectHTTP
 import PerfectHTTPServer
 
 public class Strcted {
-    public static var current: Strcted!
-    public var context: Context!
-    public func collect(controllerClasses: [IController.Type]) {
+    public static var current: Strcted = Strcted()
+    public let context: Context
+    public let router: Router
+    public func collect(controllerClasses: [HTTPMessageHandlerObject.Type]) {
         context.controllerClasses = controllerClasses
     }
     
     init() {
         context = Context()
-        Strcted.current = self
+        router = Router()
     }
     
     public func boot() {
@@ -29,12 +30,7 @@ public class Strcted {
                 [
                     "name": "localhost",
                     "port": 8181,
-                    "routes":[
-                        ["method": "get", "uri": "/", "handler": self.handler],
-                        ["method": "get", "uri": "/**", "handler": PerfectHTTPServer.HTTPHandler.staticFiles,
-                         "documentRoot": "./webroot",
-                         "allowResponseFilters":true]
-                    ],
+                    "routes": router.routeDictionaries,
                     "filters":[
                         [
                             "type": "response",
@@ -51,27 +47,6 @@ public class Strcted {
             try HTTPServer.launch(configurationData: confData)
         } catch {
             fatalError("\(error)") // fatal error launching one of the servers
-        }
-    }
-    
-    private func handler(data: [String:Any]) throws -> RequestHandler {
-        return { request, response in
-            // Respond with a simple message.
-            response.setHeader(.contentType, value: "text/html")
-            response.appendBody(string: "<html><title>Hello, world!</title><body>Hello, world!</body></html>")
-            // Ensure that response.completed() is called when your processing is done.
-            response.completed()
-        }
-    }
-    func test(data: [String:Any]) throws -> RequestHandler {
-        return { req, res in
-            let path = FileManager.default.currentDirectoryPath
-            // Respond with a simple message.
-            res.setHeader(.contentType, value: "text/html")
-            res.appendBody(string: "<html><title>Hello, world!</title><body>Hello, world!\(path)</body></html>")
-            // Ensure that response.completed() is called when your processing is done.
-            res.completed()
-            
         }
     }
 }
